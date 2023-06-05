@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      - name: Install
+        run: npm i
+
       - name: Build and copy node_modules
         run: tsc && cp -r ./node_modules ./dist
 
