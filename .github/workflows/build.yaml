@@ -1,0 +1,27 @@
+name: Build and Upload as Artifact
+
+on:
+  push:
+    branches:
+      - main
+
+  # Allow manually trigger
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Build and copy node_modules
+        run: tsc && cp -r ./node_modules ./dist
+
+      - name: Upload dist as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: lambda_function
+          path: ./dist
