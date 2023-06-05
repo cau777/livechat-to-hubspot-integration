@@ -5,6 +5,7 @@
     "target": "ES2017",
     "noImplicitAny": true,
     "preserveConstEnums": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "esModuleInterop": true
   }
 }
