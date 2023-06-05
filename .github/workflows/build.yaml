@@ -3,7 +3,7 @@ name: Build and Upload as Artifact
 on:
   push:
     branches:
-      - main
+      - master
 
   # Allow manually trigger
   workflow_dispatch:
